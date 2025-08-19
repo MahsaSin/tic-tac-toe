@@ -1,0 +1,142 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;              /* center the game on the page */
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+
+/* Game container: board left, history right */
+.game {
+  display: flex;
+  flex-direction: row;        /* <-- side-by-side */
+  align-items: flex-start;
+  justify-content: center;
+  background: #ffffffdd;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  gap: 32px;                  /* space between board and history */
+}
+
+/* Board area */
+.game-board {}
+
+/* Move list area */
+.game-info {
+  min-width: 220px;
+  text-align: left;
+  max-height: 300px;          /* limit height */
+  overflow-y: auto;           /* add vertical scrollbar if too tall */
+  padding-right: 8px;         /* avoid text under scrollbar */
+  scrollbar-width: thin;      /* Firefox */
+}
+
+/* Scrollbar styling (Webkit: Chrome, Edge, Safari) */
+.game-info::-webkit-scrollbar {
+  width: 6px;
+}
+
+.game-info::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 3px;
+}
+
+.game-info::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Status text */
+.status {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #e8f0fe;
+}
+
+/* Board layout */
+.board-row {
+  display: flex;
+}
+
+/* Squares */
+.square {
+  background: #fff;
+  border: 2px solid #444;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 70px;
+  height: 70px;
+  width: 70px;
+  margin: 4px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.square:hover {
+  background: #f0f0f0;
+  transform: scale(1.04);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+
+/* Colors for X and O (requires Square to render a span with class "x" or "o") */
+.square span.x { color: #0077ff; }
+.square span.o { color: #ff3b3b; }
+
+/* Move list buttons */
+.game-info ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.game-info li {
+  margin: 6px 0;
+}
+
+.game-info button {
+  padding: 8px 14px;
+  border: none;
+  background: #0077cc;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.game-info button:hover {
+  background: #005fa3;
+  transform: translateY(-1px);
+}
+
+/* Optional: make small screens stack vertically */
+@media (max-width: 540px) {
+  body {
+    align-items: flex-start;
+  }
+  .game {
+    margin-top: 20px;
+    flex-direction: column;   /* stack on small screens */
+    gap: 20px;
+  }
+  .game-info {
+    width: 100%;
+    min-width: 0;
+    max-height: 200px;        /* smaller scrollable area on mobile */
+  }
+}
