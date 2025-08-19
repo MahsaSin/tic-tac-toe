@@ -53,6 +53,7 @@ App will be available at 👉 http://localhost:3000
 ## Technologies Used
 
 React (with hooks: useState)
+
 Modern CSS (Flexbox, Gradients, Transitions)
 
 ## How to Play
