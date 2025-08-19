@@ -16,8 +16,11 @@ Supports time travel (move history), dynamic status updates, and a polished UI.
 
 ## 📂 Project Structure
 src/
+
 ├── App.js # Main game logic (Game, Board, Square components)
+
 ├── index.js # React entry point
+
 ├── styles.css # Full custom styling
 
 
