@@ -1,4 +1,4 @@
-# 🎮 React Tic-Tac-Toe
+# 🎮 Tic-Tac-Toe
 
 A modern, colorful implementation of the classic **Tic-Tac-Toe** game built with **React**.  
 Supports time travel (move history), dynamic status updates, and a polished UI.
